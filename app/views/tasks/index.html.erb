@@ -34,4 +34,15 @@
 
 <br>
 
+<%= month_calendar events: @tasks do |date, tasks| %>
+  <%= date %>
+
+  <% tasks.each do |task| %>
+    <div>
+      <%= task.name %>
+    </div>
+  <% end %>
+<% end %>
+
+
 <%= link_to 'New Task', new_task_path %>
