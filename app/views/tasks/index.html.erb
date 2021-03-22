@@ -21,9 +21,9 @@
         <td><%= task.title %></td>
         <td><%= task.start_time %></td>
         <td><%= task.text %></td>
-        <td><%= task.category_id %></td>
-        <td><%= task.rank_id %></td>
-        <td><%= task.status_id %></td>
+        <td><%= task.category.name %></td>
+        <td><%= task.rank.name %></td>
+        <td><%= task.status.name %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
