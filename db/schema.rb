@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_023501) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.date "date"
+    t.datetime "start_time"
     t.text "text"
     t.integer "category_id"
     t.integer "rank_id"

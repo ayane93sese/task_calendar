@@ -19,7 +19,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.title %></td>
-        <td><%= task.date %></td>
+        <td><%= task.start_time %></td>
         <td><%= task.text %></td>
         <td><%= task.category_id %></td>
         <td><%= task.rank_id %></td>
@@ -34,15 +34,17 @@
 
 <br>
 
-<%= month_calendar events: @tasks do |date, tasks| %>
-  <%= date %>
+<%= month_calendar events:@tasks do |date, tasks|%>
+  <%= date%>
 
   <% tasks.each do |task| %>
     <div>
-      <%= task.name %>
+      <%= link_to task.title, task_path(task.id) %>
     </div>
   <% end %>
 <% end %>
+
+
 
 
 <%= link_to 'New Task', new_task_path %>
