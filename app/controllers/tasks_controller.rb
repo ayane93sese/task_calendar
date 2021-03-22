@@ -1,9 +1,12 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  #before_action :move_to_index, expect: [:index, :show]
 
   # GET /tasks or /tasks.json
   def index
     @tasks = Task.all
+    #@username = current_user.username
+    #@tasks = current_user.tasks
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -65,6 +68,12 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:title, :start_time, :text, :category_id, :rank_id, :status_id)
+      params.require(:task).permit(:title, :start_time, :text, :category_id, :rank_id, :status_id).merge(user_id: current_user.id)
+    end
+
+    def move_to_index
+      unless user_signed_in?
+        redirect_to action: :index
+      end
     end
 end
