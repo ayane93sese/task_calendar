@@ -18,7 +18,7 @@
 | Column      | Type       | Options                      |
 | ----------- | ---------- | ---------------------------- |
 | title       | string     | null:false                   |
-| date        | date       |                              |
+| start_time  | datetime   | null:false                   |
 | text        | text       |                              |
 | category_id | integer    | null:false                   |
 | rank_id     | integer    | null:false                   |

@@ -8,7 +8,7 @@ class Task < ApplicationRecord
   validates :title, presence:true
   validates :start_time, presence:true
 
-  with_options numericality: { other_than: 1, message: "を選択してください" }do
+  with_options numericality: { other_than: 1, message: "Select" }do
   validates :category_id
   validates :rank_id
   validates :status_id
