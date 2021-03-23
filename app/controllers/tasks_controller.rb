@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, only:[:show, :new, :edit, :create, :update, :destroy]
   before_action :set_task, only: %i[ show edit update destroy ]
-  #before_action :move_to_index, expect: [:index, :show]
+  before_action :move_to_index, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks or /tasks.json
   def index
@@ -55,7 +56,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
+      format.html { redirect_to user_path(current_user.id), notice: "Task was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -72,8 +73,8 @@ class TasksController < ApplicationController
     end
 
     def move_to_index
-      unless user_signed_in?
+      if current_user.id != @task.user_id
         redirect_to action: :index
       end
     end
-end
+  end
