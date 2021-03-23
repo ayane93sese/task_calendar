@@ -7,8 +7,8 @@
 
 <h1><%= @username %>Tasks</h1>
 
-<table>
-  <thead>
+<table class="table table-striped">
+  <thead class="table">
     <tr>
       <th>Title</th>
       <th>Date</th>
@@ -20,18 +20,18 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="table">
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.title %></td>
-        <td><%= task.start_time %></td>
-        <td><%= task.text %></td>
-        <td><%= task.category.name %></td>
-        <td><%= task.rank.name %></td>
-        <td><%= task.status.name %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td ><%= task.title %></td>
+        <td ><%= task.start_time %></td>
+        <td ><%= task.text %></td>
+        <td ><%= task.category.name %></td>
+        <td ><%= task.rank.name %></td>
+        <td ><%= task.status.name %></td>
+        <td ><%= link_to 'Show', task %></td>
+        <td ><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td ><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -47,7 +47,5 @@
     </div>
   <% end %>
 <% end %>
-
-<%= link_to 'New Task', new_task_path %>
 
 </div>
