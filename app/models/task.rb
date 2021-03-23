@@ -6,11 +6,14 @@ class Task < ApplicationRecord
   belongs_to :status
 
   validates :title, presence:true
+  validates :start_time, presence:true
 
   with_options numericality: { other_than: 1, message: "を選択してください" }do
   validates :category_id
   validates :rank_id
   validates :status_id
 end
+
+  belongs_to :user
 
 end
