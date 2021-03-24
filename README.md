@@ -107,3 +107,26 @@ Pass:test22
 # データベース設計
 
 ![er](https://user-images.githubusercontent.com/78408675/112271417-3d985380-8cbe-11eb-8b3f-f257584da0fe.png)
+
+# 使用技術(開発環境)
+
+### バックエンド
+Ruby, Ruby on Rail
+
+### フロントエンド
+HTML, CSS, JavaScript
+
+### データベース
+MySQL, Sequel Pro
+
+### Webサーバー
+Heroku
+
+### ソース管理
+GiuHub, GitHubDesktop
+
+### テスト
+RSpec
+
+### エディタ
+VSCode
